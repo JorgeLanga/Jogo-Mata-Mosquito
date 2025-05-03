@@ -1,6 +1,8 @@
 let altura=0
 let largura=0
 let vidas=1
+let tempo=10
+
 function ajustarTamanhoPalcoJogo() {
     altura=window.innerHeight
     largura=window.innerWidth
@@ -8,6 +10,20 @@ function ajustarTamanhoPalcoJogo() {
 }
 
 ajustarTamanhoPalcoJogo()
+
+let cronometro=setInterval(function(){
+    tempo -=1
+
+    if(tempo<0){
+        clearInterval(cronometro)
+        clearInterval(criarMosquito)
+        alert("Victoria")
+    }else{
+        document.getElementById("cronometro").innerHTML=tempo
+    }
+   
+},1000)
+
 
 
 function posicaoAleatoria(){
@@ -88,7 +104,7 @@ function ladoAleatorio(){
     }
 }
 
-setInterval(function(){
+let criarMosquito=setInterval(function(){
     posicaoAleatoria()
 },1500)
 
