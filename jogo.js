@@ -8,8 +8,47 @@ function ajustarTamanhoPalcoJogo() {
 
 ajustarTamanhoPalcoJogo()
 
-//Gerando posicao na tela do mosquito
-let posicaoX=Math.floor(Math.random()*largura)
-let positionY=Math.floor(Math.random()*altura)
-console.log(posicaoX,positionY)
 
+function posicaoAleatoria(){
+
+    //Gerando posicao na tela do mosquito
+    let posicaoX=Math.floor(Math.random()*largura)-90
+    let posicaoY=Math.floor(Math.random()*altura)-90
+    console.log(posicaoX,posicaoY)
+
+    //Mantendo o mosquito nos limites da tela
+    posicaoX=posicaoX<0?0:posicaoX
+    posicaoY=posicaoY<0?0:posicaoY
+
+    
+    //Criando os elementos do html
+    let mosquito=document.createElement('img')
+    mosquito.src='imagens/mosca.png'
+    mosquito.className=tamanhoAleatorio()
+    mosquito.style
+    .left=posicaoX+'px'
+    mosquito.style
+    .top=posicaoY+'px'
+    mosquito.style.position='absolute'
+
+    document.body.appendChild(mosquito)
+    
+}
+
+function tamanhoAleatorio(){
+    let classe=Math.floor(Math.random()*3)
+
+    switch(classe){
+        case 0: 
+        return "mosquito1"
+
+         case 2: 
+        return "mosquito2"
+
+         case 3: 
+        return "mosquito3"
+        default: return "mosquito1"
+    }
+}
+
+posicaoAleatoria()
