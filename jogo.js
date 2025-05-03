@@ -17,7 +17,7 @@ let cronometro=setInterval(function(){
     if(tempo<0){
         clearInterval(cronometro)
         clearInterval(criarMosquito)
-        alert("Victoria")
+        window.location.href="vitoria.html"
     }else{
         document.getElementById("cronometro").innerHTML=tempo
     }
@@ -106,10 +106,6 @@ function ladoAleatorio(){
 
 let criarMosquito=setInterval(function(){
     posicaoAleatoria()
-},1500)
+},2000)
 
-let btn=document.getElementById("btn")
 
-btn.onclick=function(){
-    window.location.href="app.html"
-}
