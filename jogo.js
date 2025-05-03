@@ -19,7 +19,7 @@ function posicaoAleatoria(){
         document.getElementById("mosquito").remove()
 
         if(vidas>3){
-            alert("GAME OVER")
+           window.location.href="fimJogo.html"
         }else{
               document.getElementById("v"+vidas).src="imagens/coracao_vazio.png"
               vidas ++
@@ -91,3 +91,9 @@ function ladoAleatorio(){
 setInterval(function(){
     posicaoAleatoria()
 },1500)
+
+let btn=document.getElementById("btn")
+
+btn.onclick=function(){
+    window.location.href="app.html"
+}
